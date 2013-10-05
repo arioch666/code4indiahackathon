@@ -20,4 +20,20 @@
        	android:layout_below="@id/state"
 		android:id="@+id/stream"
 		android:text="@string/stream"/>
+    
+    <Button 
+        android:layout_below="@id/stream"
+        android:layout_width="270dp"
+        android:layout_height="120dp"
+        android:id="@+id/startButton"
+        android:visibility="visible"
+        />
+    
+    <Button
+         android:layout_below="@id/stream"
+        android:layout_width="270dp"
+        android:layout_height="120dp"
+        android:id="@+id/stopButton"
+        android:visibility="invisible"/>
+    "
 </RelativeLayout>
