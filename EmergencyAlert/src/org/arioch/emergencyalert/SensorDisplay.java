@@ -128,7 +128,25 @@ public class SensorDisplay extends Activity implements SensorEventListener
 	@Override
 	public void onSensorChanged(SensorEvent event)
 	{
-		
+		if(accelerometer!= null && event.sensor.getType() == accelerometer.getType())
+		{	
+			shakeDetect(event);
+		}
+		else if(proximitySensor!=null && event.sensor.getType() == proximitySensor.getType())
+		{
+			detectProximity(event);
+		}
+	}
+
+	private void detectProximity(SensorEvent event)
+	{
+		// TODO Auto-generated method stub
+		((TextView) findViewById(R.id.stream)).setText("x:"+event.values[0]+" y:"+event.values[1]+" z:"+event.values[2]);
+	}
+
+	private void shakeDetect(SensorEvent event)
+	{
+			((TextView) findViewById(R.id.state)).setText("x:"+event.values[0]+" y:"+event.values[1]+" z:"+event.values[2]);
 	}
 
 	@Override
